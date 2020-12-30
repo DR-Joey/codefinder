@@ -8,26 +8,24 @@ datasource db {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        String      @id @default(cuid())
   title     String
   createdAt DateTime @default(now())
   content   String?
   published Boolean  @default(false)
-  authorId  Int
+  authorId  String
   User      User     @relation(fields: [authorId], references: [id])
 }
 
 model Profile {
-  id     Int     @id @default(autoincrement())
+  id     String     @id @default(cuid())
   bio    String?
-  userId Int     @unique
+  userId String     @unique
   User   User    @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  name    String?
+  id      String      @id @default(cuid())
+  username    String?
   email   String   @unique
-  Post    Post[]
-  Profile Profile?
 }
