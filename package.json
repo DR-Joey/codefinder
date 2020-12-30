@@ -1,0 +1,24 @@
+{
+  "name": "codefinder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DR-Joey/codefinder.git",
+  "author": "DR-Joey <jegal07@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "dotenv": "^8.2.0",
+    "graphql-tools": "^7.0.2",
+    "graphql-yoga": "^1.18.3",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "deploy": "prisma deploy",
+    "generate": "prisma generate",
+    "prisma": "yarn run deploy && yarn run generate",
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
