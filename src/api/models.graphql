@@ -3,6 +3,14 @@ type User {
   username: String!
   email: String!
 }
+
+type Code {
+  id: ID!
+  controller: String
+  code: String!
+  inform: String
+}
+
 type Query {
   dummy: String
 }

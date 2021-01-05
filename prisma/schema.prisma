@@ -24,6 +24,13 @@ model Profile {
   User   User    @relation(fields: [userId], references: [id])
 }
 
+model Code {
+  id     String     @id @default(cuid())
+  controller    String?
+  code String     @unique
+  inform String
+}
+
 model User {
   id      String      @id @default(cuid())
   username    String?

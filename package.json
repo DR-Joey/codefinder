@@ -21,6 +21,7 @@
   "scripts": {
     "deploy": "prisma deploy",
     "generate": "prisma generate",
+    "prisma": "prisma migrate dev --preview-feature",
     "dev": "nodemon --exec babel-node src/server.js"
   }
 }
